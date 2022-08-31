@@ -14,11 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\Product::factory(50)->create();
+
+        \App\Models\User::factory()->create([
+                'name' => 'Administrator',
+                'email' => 'admin@miniecommerceshop.test',
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                'role' => 'ADMIN',
+                'created_at' => now(),
+                'updated_at' => now(),
+        ]);
     }
 }
